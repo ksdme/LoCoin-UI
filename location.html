@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LoCoin-Location</title>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<!-- for map API -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+</head>
+<body>
+
+	<!-- header -->
+	<div class="ui secondary stackable pointing menu app-nav-bar-fixes">
+		<a class="disabled item not-for-mobile">
+			<font color="#000000" > LoCoin </font>
+		</a>
+
+		<div class="right menu">
+			<a class="active item">
+				LOCATE
+			</a>
+
+			<a href="home.html" class="item">
+				ABOUT
+			</a>
+		</div>
+	</div>
+	
+	<br>
+
+
+	<!-- map -->
+	<div class="ui centered grid">
+		<div class="row">
+			<div id="maparea"></div>
+		</div>
+	</div>
+
+
+	<!-- scripts -->
+	<script>
+		var maparea = L.map('maparea').setView([47.751076, -120.740135], 10);
+
+		 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                maxZoom: 15
+            }).addTo(maparea);
+
+		var marker = L.marker([47.751076, -120.740135]).addTo(maparea);
+
+
+		// $('.ui.modal')
+		//   .modal('show');
+
+	</script>
+
+
+
+	<!-- links -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="libs/jquery/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="libs/semantic/semantic.min.css">
+	<script src="libs/semantic/semantic.min.js"></script>
+
+</body>
+</html>
